@@ -70,13 +70,15 @@ function updateAllImageData() {
   // ルートになる場所
   //  getRootDirectoryIdは別ファイルでconfig的に定義
   const baseFolderId = getRootDirectoryId();
-  var imageList = [];
-  
-  const yearFolders = searchFolderIds(baseFolderId);
+  var yearFolders = searchFolderIds(baseFolderId);
+
   // 年ディレクトリ
   Object.keys(yearFolders).forEach(function(yearIndex) {
     Logger.log(yearFolders[yearIndex]);
-    const monthFolders = searchFolderIds(yearFolders[yearIndex]);
+
+    var imageList = [];
+
+    var monthFolders = searchFolderIds(yearFolders[yearIndex]);
     Logger.log(monthFolders);
     // 月ディレクトリ
     Object.keys(monthFolders).forEach(function(monthIndex) {
