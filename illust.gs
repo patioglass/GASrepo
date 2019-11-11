@@ -36,6 +36,9 @@ function writeSpreadSheet(list, sheetName, rowIndex, colIndex) {
   var range = sheet.getRange(rowIndex, colIndex, list.length, list[0].length);
   // 対象の範囲にまとめて書き出し
   range.setValues(list);
+
+  // スプレッドシートのmonth(3列目)で降順ソート
+  sheet.getFilter().sort(3, false);
 }
 
 /*
